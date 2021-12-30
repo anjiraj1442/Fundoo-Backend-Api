@@ -1,8 +1,9 @@
 //imports
 const express = require("express");
+const controller = require('../Controller/controller')
 //create Router
 const router = express.Router();
-const controller = require('../Controller/controller')
 //register path
 router.post('/register',controller.Registration);
+//exports
 module.exports = router

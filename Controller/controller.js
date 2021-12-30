@@ -1,3 +1,4 @@
+//impot service
 const service = require('../Service/service');
 
 class RegistrationClass{

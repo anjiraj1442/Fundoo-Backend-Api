@@ -1,5 +1,7 @@
+//imports
 const model = require("../Model/model")
-const userModelInstance = new model.UserModel();
+const bcrypt = require("bcrypt");
+const UserModelInstance = new model.UserModel();
 const newmodel = model.User;
 //serviceclass
 class ServicesClass{
@@ -9,8 +11,9 @@ class ServicesClass{
                "lastName": obj.lastName,
                "email":obj.email,
                "password":obj.password
-          })
-          let savedData = userModelInstance.Registration(newuser)
+          });
+          
+          let savedData = UserModelInstance.Registration(newuser)//pass data to model  and get status
           return savedData;//return the saved data
 
      }

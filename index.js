@@ -1,6 +1,7 @@
+//imports
 const express = require("express");
-const mongoose = require("mongoose");
 const router = require("./Router/router");
+let dbconnection = require("./Configdb/config")
 
 // start your app
 let app = express();
@@ -10,21 +11,11 @@ let app = express();
 app.use(express.json())
 app.use("/", router);
 app.get("/",(req,res)=>{
-  
   res.send("welcome mesage");
 })
-
-
 //listen port number at 3636
 app.listen(3636,(req,res)=> {
-    console.log("Applicaion is running at ");
+    console.log("Applicaion is running at 3636 port number ");
 });
-//mongoose connection
-mongoose.connect('mongodb://localhost:27017/LoginProject', (err)=>{
-    if(err){
-      console.log("db erorr", err)
-    }
-    else{
-      console.log("db connected succesfuuly")
-    }
-});
+//db connection
+dbconnection.db();
