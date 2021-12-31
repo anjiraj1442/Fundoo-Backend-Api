@@ -1,14 +1,17 @@
 //imports
 const express = require("express");
 const router = require("./Router/router");
+//const Validator = require("express-validator")
 let dbconnection = require("./Configdb/config")
-
+//const expressValidator = require('express-validator');
 // start your app
 let app = express();
 //const router =  require('./router/router');
 
 // middleware
+//app.use(expressValidator);
 app.use(express.json())
+//app.use(Validator)
 app.use("/", router);
 app.get("/",(req,res)=>{
   res.send("welcome mesage");

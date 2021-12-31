@@ -13,8 +13,19 @@ class RegistrationClass{
                console.log("fail",err);
           })
      }
+
+
+     loginControll(req,res){
+       service.loginServices(req.body)
+       .then((result)=>{
+            console.log(result)
+            res.send(JSON.stringify(result))
+       })
+       .catch((err)=>{
+            console.log(err)
+            res.send(JSON.stringify(err))
+       })
+     }
 }
-
-
 //export the registrationclass
 module.exports = new RegistrationClass();

@@ -1,8 +1,8 @@
 //imports
 const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
+
 //data base schema
-const UserSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
   firstName: {
     type: String,
    
@@ -24,61 +24,101 @@ const UserSchema = new mongoose.Schema({
    
 });
 
-//hashing password and storing in db
-UserSchema.pre("save", function (next) {
-  if (this.isModified("password")) {
-    bcrypt.hash(this.password, 8, (err, hash) => {
-      if (err) return next(err);
-      this.password = hash;
-      next();
-    });
-  }
-});
 
-//comparing given passwords and from database
-UserSchema.methods.comparePassword = async function (password) {
-  if (!password) throw new Error("password missing");
-
-  try {
-    const result = await bcrypt.compare(password, this.password);
-    return result;
-  } catch (error) {
-    console.log("error while comparing password", error.message);
-  }
-};
-
-const User = mongoose.model("LoginProject", UserSchema);
+const User = mongoose.model("LoginProject", userSchema);
 //usermodel class
 class UserModel{
-     Registration(req){
-          let response={
-               "success": true,
-               "message":"",
-               "data":""
-          }
-          return new Promise((resolve,reject)=>{
-                //save the data in db
-               req.save().then((data)=>{
-                    console.log(data);
-                    response.success= true,
-                    response.message="successfully register",
-                    response.data=data,
-                    response.status=200
-                    resolve({response})
-                    // 200-299 success
-                    // 400-499--- client
-                    // 500-599 server
-               })
-               .catch((data)=>{
-                    response.success= false,
-                    response.message="failed register",
-                    response.data=data,
-                    response.status=500
-                    reject({response})
-               })
-          })
-     }
+  findUser(req) {
+    var response = {
+         message: "",
+         data: "",
+         success: "",
+         status: 200
+   };
+   return new Promise((resolve, reject) => {
+     User.findOne({ email: req.email })    
+       .then((data) => {
+         if (data) {
+           (response.success = true),
+             (response.data = data),
+             (response.status = 422),
+             (response.message = "user is already exist");
+           resolve(response);
+         } else {
+           resolve({
+             message: "user not found please register first",
+             data: data,
+             status: 400
+           });
+         }
+       })
+       .catch((err) => {
+         console.log(err)
+         reject({ success: false, error: err });
+       });
+   });
+ }
+   loginController(req) {
+        var response = {
+            message: "",
+            data: "",
+            success: "",
+            status: 200
+        };
+        return new Promise((resolve, reject) => {
+            User.findOne({ password: req.password })
+                .then((data) => {
+                    if (data) {
+                        (response.success = true),
+                            (response.data = data),
+                            (response.status = 422),
+                            (response.message = "Login successful");
+                        resolve(response);
+                    }
 
+                    else {
+                        resolve({
+                            message: "user not found please register first",
+                            data: data,
+                            status: 400
+                        });
+                    }
+                })
+                .catch((err) => {
+                    reject(
+                        { success: false, error: err }
+                    );
+                });
+        });
+    }
+
+   RegisterUser(req) {
+   var response = {
+       success: true,
+       message: "",
+       data: "",
+       status:200
+   };
+
+   return new Promise((resolve, reject) => {
+     req
+       .save()
+       .then((data) => {
+         (response.success = true),
+           (response.message = " Registered Succesfully"),
+           (response.data = data),
+           (response.status = 200);
+         resolve( response );
+       })
+       .catch((err) => {
+         (response.success = false),
+           (response.message = " Registered Failed"),
+           (response.data = ""),
+           (response.status = 500);
+         reject(response );
+       });
+   });
+ }
 }
 
    
