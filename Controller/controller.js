@@ -14,7 +14,6 @@ class RegistrationClass{
           })
      }
 
-
      loginControll(req,res){
        service.loginServices(req.body)
        .then((result)=>{

@@ -17,8 +17,6 @@ class ServicesClass{
                     "password":passwordHash,
                });
           }
-          
-          
           let savedData = UserModelInstance.RegisterUser(newuser)//pass data to model  and get status
           return savedData;//return the saved data
 

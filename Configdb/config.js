@@ -1,16 +1,17 @@
 //imports
 const mongoose = require("mongoose")
+require('dotenv').config();
 class DBconnection{
-  db = ()=>{
-//mongoose connection
-   mongoose.connect('mongodb://localhost:27017/LoginProject', (err)=>{
-    if(err){
-      console.log("db erorr", err)
-    }
-    else{
-      console.log("db connected succesfuuly")
-    }
-});
-}
-}
-module.exports=new DBconnection(); //export the DB connection class   
+  connection=()=>{
+    const url = process.env.URL;
+     mongoose.connect(url, {
+      useNewUrlParser: true
+     }).then(() => {
+         console.log("Successfully connected to the database");    
+     }).catch(err => {
+         console.log('Could not connect to the database. Exiting now...', err);
+         process.exit();
+     });  
+ }
+}   
+module.exports = new DBconnection();  
