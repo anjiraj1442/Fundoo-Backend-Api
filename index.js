@@ -3,9 +3,9 @@ const express = require("express");
 const dotenv = require('dotenv');
 dotenv.config({path: '.env'})
 console.log(process.env.PORT);
-const router = require("./Router/router")
+const router = require("./app/Router/router")
 const expressValidator = require("express-validator")
-let dbconnection = require("./Configdb/config")
+let dbconnection = require("./app/Configdb/config")
 // start your app
 let app = express();
 app.use(expressValidator())
