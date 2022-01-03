@@ -1,6 +1,3 @@
-//imports
-const express = require("express");
-
 const controller = require('../Controller/controller');
 const validator = require("../Validators/validation");
 const aut = require('../Validators/authenticate')
