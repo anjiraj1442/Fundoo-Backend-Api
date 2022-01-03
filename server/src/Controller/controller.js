@@ -25,6 +25,16 @@ class RegistrationClass{
             res.send(JSON.stringify(err))
        })
      }
+
+     // forgotPasswordControll(req,res){
+     //      service.forgotPasswordService(req).then((result)=>{
+     //           console.log(result);
+     //           res.send(JSON.stringify(result))
+     //      })
+     //      .catch((error)=>{
+     //           res.send(JSON.stringify(error))
+     //      })
+     // }
 }
 //export the registrationclass
 module.exports = new RegistrationClass();

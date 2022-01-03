@@ -115,7 +115,9 @@ class UserModel{
            (response.message = " Registered Failed"),
            (response.data = ""),
            (response.status = 500);
-         reject(err);
+         reject(err
+          
+          );
        });
    });
  }

@@ -1,6 +1,7 @@
 //imports
 const model = require("../Model/model")
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken")
 //const res = require("express/lib/response");
 const UserModelInstance = new model.UserModel();
 const newmodel = model.User;
@@ -28,6 +29,8 @@ class ServicesClass{
               console.log(findUser, "find user");
           let passwordVerify = await bcrypt.compare(req.password, findUser.data.password)
           if (passwordVerify) {
+             const payload = { id:findUser.data._id, email:findUser.data.email}
+              const token = jwt.sign(payload, process.env.SECRETTOKEN,{expireIn:'1d'})
               return {
                   message: "Login success",
                   userId: findUser.data._id,
@@ -36,6 +39,7 @@ class ServicesClass{
                   email: findUser.data.email,
                   createdAt: findUser.data.createdAt,
                   success: "",
+                  token: token,
                   status: 200
               }
           }
@@ -52,5 +56,6 @@ class ServicesClass{
       else return findUser;
   
      }
+
 }
 module.exports= new ServicesClass();
