@@ -2,8 +2,7 @@
 const model = require("../Model/model")
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken")
-//const res = require("express/lib/response");
-const UserModelInstance = new model.UserModel();
+const UserModelInstance = new model.UserModelClass();
 const newmodel = model.User;
 //serviceclass
 class ServicesClass{

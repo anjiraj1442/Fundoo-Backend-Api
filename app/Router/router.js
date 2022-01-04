@@ -9,7 +9,7 @@ const router = express.Router();
 //register path
 router.post('/register', validator.registerValidate, controller.Registration);//validator.validate,
 //login
-router.post('/login',  validator.loginValidate,   controller.loginControll)
+router.post('/login',aut, validator.loginValidate,   controller.loginControll)
 router.post('/createnotes',aut, noteControll.createNote)
 
 //exports

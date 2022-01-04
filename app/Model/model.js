@@ -28,7 +28,7 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model("LoginProject", userSchema);
 //usermodel class
-class UserModel{
+class UserModelClass{
   findUser(req) {
     var response = {
          message: "",
@@ -117,9 +117,9 @@ class UserModel{
            (response.message = " Registered Failed"),
            (response.data = ""),
            (response.status = 500);
-         reject(err
+         reject(err);
           
-          );
+          
        });
    });
  }
@@ -128,4 +128,4 @@ class UserModel{
    
 
 //export the cls and schema
-module.exports = {UserModel,User}
+module.exports = {UserModelClass,User}

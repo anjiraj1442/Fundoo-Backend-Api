@@ -2,7 +2,8 @@
 const noteService = require('../Service/noteservice')
 class NotesControllerClass {
      async createNote(req, res) {
-         await noteService.createNoteService(req.body).then((result) => {
+         await noteService.createNoteService(req.body)
+         .then((result) => {
              res.status(200).json(result)
          }).catch((err => {
             

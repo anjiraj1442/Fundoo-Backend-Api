@@ -16,7 +16,6 @@ app.use("/", router);
 app.get("/",(req,res)=>{
   res.send("welcome mesage");
 })
-//listen port number at 3636
 const PORT = process.env.PORT 
 app.listen(PORT, ()=>{
   console.log("server is listening");
