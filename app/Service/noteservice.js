@@ -26,6 +26,14 @@ class NoteServiceClass {
              return foundnotes;
          }
      }
+     async dltNoteService(req, res) {
+      
+      let foundNote = await noteModelInstant.checkNotes(req);
+      if (foundNote) {
+          return await Notes.deleteOne({ _id: foundNote.data._id })
+          console.log("deleted note");
+      }
+  }
 }
 //exports
 module.exports = new NoteServiceClass();

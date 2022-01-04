@@ -12,6 +12,6 @@ router.post('/register', validator.registerValidate, controller.Registration);//
 router.post('/login', validator.loginValidate,   controller.loginControll)
 router.post('/createnotes',aut, noteControll.createNote)
 router.get('/getNotes',aut, noteControll.getNote)
-
+router.delete('/deletenotes',aut,noteControll.deleteNotes)
 //exports
 module.exports = router
