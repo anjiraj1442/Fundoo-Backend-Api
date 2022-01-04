@@ -52,6 +52,39 @@ const createNotes = new mongoose.Schema({
              })
          })
      }
+
+        findNotes(req) {
+          var response = {
+            message: "",
+            data: "",
+            success: "",
+            status: 200
+           };
+           return new Promise((resolve, reject) => {
+             notes.findOne(req)
+                .then((data) => {
+                    if (data) {
+                        (response.success = true),
+                            (response.data = data),
+                            (response.status = 202),
+                            (response.message = "Notes available");
+                        resolve(response);
+                    }
+                    else {
+                        resolve({
+                            message: "Notes not available",
+                            data: null,
+                            status: 400
+                        });
+                    }
+                })
+                .catch((err) => {
+                    reject(
+                        { success: false, error: err }
+                    );
+                });
+        });
+    }
 }
 //exports
 module.exports = {notes,NoteModelClass}

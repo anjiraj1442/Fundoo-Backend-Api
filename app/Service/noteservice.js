@@ -1,5 +1,5 @@
 //import
-const noteModel = require('../Model/nodemodel')
+const noteModel = require('../Model/notemodel')
 const Notes = noteModel.notes
 const noteModelInstant = new noteModel.NoteModelClass();
 class NoteServiceClass {
@@ -15,6 +15,16 @@ class NoteServiceClass {
          })
          let saveData = noteModelInstant.createNoteModel(newUser);
          return saveData;
+     }
+       async getNoteService(req,res){
+          var getnote  ={
+            userid:req.data.id
+
+           }
+         var foundnotes = await noteModelInstant.findNotes(getnote)
+         if(foundnotes){
+             return foundnotes;
+         }
      }
 }
 //exports

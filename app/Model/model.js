@@ -60,7 +60,7 @@ class UserModelClass{
    });
  }
  //login
-   loginController(req) {
+   loginModel(req) {
         var response = {
             message: "",
             data: "",

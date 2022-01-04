@@ -1,4 +1,5 @@
 //imports
+const noteservice = require('../Service/noteservice');
 const noteService = require('../Service/noteservice')
 class NotesControllerClass {
      async createNote(req, res) {
@@ -9,6 +10,16 @@ class NotesControllerClass {
             
              return res.status(400).send(err);
          }))
+     }
+     async getNote(req,res){
+         await noteservice.getNoteService(req.body)
+         .then((result) => {
+            res.status(200).json(result)
+        }).catch((err => {
+           
+            return res.status(400).send(err);
+        }))
+        
      }
 }
 //exports
