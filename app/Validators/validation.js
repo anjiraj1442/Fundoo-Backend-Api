@@ -49,4 +49,5 @@ let loginValidate = (req, res, next) => {
       next();
   }
 }
+//exports
 module.exports ={ registerValidate,loginValidate}

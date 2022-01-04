@@ -18,11 +18,12 @@ const userSchema = new mongoose.Schema({
    password: {
      type: String,
    }
-   },{
+   },
+   {
      timestamps: true
    
    
-});
+ });
 
 
 const User = mongoose.model("LoginProject", userSchema);
@@ -58,6 +59,7 @@ class UserModel{
        });
    });
  }
+ //login
    loginController(req) {
         var response = {
             message: "",
@@ -91,7 +93,7 @@ class UserModel{
                 });
         });
     }
-
+    //register
    RegisterUser(req) {
    var response = {
        success: true,

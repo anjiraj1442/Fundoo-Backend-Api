@@ -30,7 +30,7 @@ class ServicesClass{
           let passwordVerify = await bcrypt.compare(req.password, findUser.data.password)
           if (passwordVerify) {
              const payload = { id:findUser.data._id, email:findUser.data.email}
-              const token = jwt.sign(payload, process.env.SECRETTOKEN,{expireIn:'1d'})
+              const token = jwt.sign(payload, process.env.SECRETTOKEN)
               return {
                   message: "Login success",
                   userId: findUser.data._id,
@@ -58,4 +58,5 @@ class ServicesClass{
      }
 
 }
+//exports
 module.exports= new ServicesClass();

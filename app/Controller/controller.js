@@ -3,7 +3,7 @@ const service = require('../Service/service');
 
 class RegistrationClass{
      Registration(req,res){
-          service.UserRegistration(req.body)
+          service.UserRegistration(req.body)//body content
           .then((result)=>{
                console.log("succesfull", result);
 
@@ -26,15 +26,7 @@ class RegistrationClass{
        })
      }
 
-     // forgotPasswordControll(req,res){
-     //      service.forgotPasswordService(req).then((result)=>{
-     //           console.log(result);
-     //           res.send(JSON.stringify(result))
-     //      })
-     //      .catch((error)=>{
-     //           res.send(JSON.stringify(error))
-     //      })
-     // }
+    
 }
 //export the registrationclass
 module.exports = new RegistrationClass();

@@ -10,7 +10,6 @@ let dbconnection = require("./app/Configdb/config")
 let app = express();
 app.use(expressValidator())
 // middleware
-//app.use(expressValidator);
 app.use(express.json())
 
 app.use("/", router);
