@@ -13,5 +13,6 @@ router.post('/login', validator.loginValidate,   controller.loginControll)
 router.post('/createnotes',aut, noteControll.createNote)
 router.get('/getNotes',aut, noteControll.getNote)
 router.delete('/deletenotes',aut,noteControll.deleteNotes)
+router.get('/isArchieved',aut,noteControll.isArchiveControll)
 //exports
 module.exports = router
