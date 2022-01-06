@@ -91,10 +91,10 @@ class ServicesClass{
         }
     }
      async rstpassService(req, res) {
-       let foundUser = await UserModelInstance.findUser({ userId: req.id });
-         if (foundUser.data) {
-          const passwordHash = await bcrypt.hash(req.password, 10)
-          var updatedData = newmodel.updateOne({ userId: req.id }, { password: passwordHash });
+       let foundUser = await UserModelInstance.findUser({ _id: req.data.id });
+         if (foundUser) {
+          let hash = await bcrypt.hash(req.password, 10)
+          var updatedData = newmodel.updateOne({ _id: req.data.id }, { password: passwordHash });
           return updatedData;
         }
        else return foundUser;

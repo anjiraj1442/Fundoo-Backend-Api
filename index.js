@@ -1,5 +1,6 @@
 //imports
 const express = require("express");
+const logger = require('./app/Configdb/logger')
 const dotenv = require('dotenv');
 dotenv.config({path: '.env'})
 console.log(process.env.PORT);
@@ -18,7 +19,8 @@ app.get("/",(req,res)=>{
 })
 const PORT = process.env.PORT 
 app.listen(PORT, ()=>{
-  console.log("server is listening");
+  logger.error('server start at 3636')
+  console.log('server is listening');
 })
 //db connection
 dbconnection.connection();

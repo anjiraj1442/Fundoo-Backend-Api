@@ -1,13 +1,14 @@
 //imports
 const noteservice = require('../Service/noteservice');
 const noteService = require('../Service/noteservice')
+const logger = require('../Configdb/logger')
 class NotesControllerClass {
      async createNote(req, res) {
          await noteService.createNoteService(req.body)
          .then((result) => {
              res.status(200).json(result)
          }).catch((err => {
-            
+            logger.error("Error in add notes")
              return res.status(400).send(err);
          }))
      }
@@ -16,7 +17,7 @@ class NotesControllerClass {
          .then((result) => {
             res.status(200).json(result)
         }).catch((err => {
-           
+            logger.error("Error in get notes")
             return res.status(400).send(err);
         }))
         
@@ -26,6 +27,7 @@ class NotesControllerClass {
          .then((result)=>{
              res.status(200).json(result)
          }).catch((err =>{
+            logger.error("Error in delete notes")
              res.status(400).send(err)
          }))
      }
@@ -34,6 +36,7 @@ class NotesControllerClass {
         .then((result)=>{
             res.status(200).json(result)
         }).catch((err =>{
+            logger.error("Error in getingisArchieved notes")
             res.status(400).send(err)
         }))
     }
@@ -42,6 +45,7 @@ class NotesControllerClass {
         .then((result)=>{
             res.status(200).json(result)
         }).catch((err=>{
+            logger.error("Error in getingisDeleted notes")
             res.status(400).send(err)
         }))
     }
@@ -50,6 +54,7 @@ class NotesControllerClass {
         .then((result)=>{
             res.status(200).json(result)
         }).catch((err=>{
+            logger.error("Error in update notes")
             return res.status(400).send(err)
         }))
     }

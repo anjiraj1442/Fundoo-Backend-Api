@@ -1,6 +1,6 @@
 //impot service
 const service = require('../Service/service');
-
+const logger = require('../Configdb/logger')
 class RegistrationClass{
     async Registration(req,res){
          await service.UserRegistration(req.body)//body content
@@ -10,7 +10,8 @@ class RegistrationClass{
      
           })
           .catch((err)=>{
-               console.log("fail",err);
+               //console.log("fail",err);
+               logger.error("fail",err);
           })
      }
 
@@ -23,6 +24,7 @@ class RegistrationClass{
        .catch((err)=>{
             console.log(err)
             res.send(JSON.stringify(err))
+            logger.error("error while login", err)
        })
      }
 
@@ -33,8 +35,9 @@ class RegistrationClass{
                res.send(JSON.stringify(result))
           })
           .catch((err)=>{
-               console.log(err)
+               //console.log(err)
                res.send(JSON.stringify(err))
+               logger.error("error in forgot password operation")
           })
      }
 
@@ -45,8 +48,9 @@ class RegistrationClass{
                res.send(JSON.stringify(result))
           })
           .catch((err)=>{
-               console.log(err)
+               //console.log(err)
                res.send(JSON.stringify(err))
+               logger.error("error in resetpassword operation",err)
           })
      }
     

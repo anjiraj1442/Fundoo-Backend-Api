@@ -1,6 +1,7 @@
 //imports
 const mongoose = require("mongoose")
 require('dotenv').config();
+const logger = require('../Configdb/logger')
 class DBconnection{
   connection=()=>{
     const url = process.env.URL;
@@ -9,7 +10,8 @@ class DBconnection{
      }).then(() => {
          console.log("Successfully connected to the database");    
      }).catch(err => {
-         console.log('Could not connect to the database', err);
+         //console.log(' Couldnect to the database', err);
+         logger.error('Couldnect to the database');
          process.exit();
      });  
  }

@@ -37,7 +37,7 @@ class UserModelClass{
          status: 200
    };
    return new Promise((resolve, reject) => {
-     User.findOne({ email: req.email })    
+     User.findOne(req)    
        .then((data) => {
          if (data) {
            (response.success = true),
