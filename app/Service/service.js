@@ -2,8 +2,11 @@
 const model = require("../Model/model")
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken")
+const nodemailer = require('../Validators/nodemailer')
+//const { reject } = require("bcrypt/promises");
 const UserModelInstance = new model.UserModelClass();
 const newmodel = model.User;
+require('dotenv').config();
 //serviceclass
 class ServicesClass{
    async  UserRegistration(obj,res){
@@ -55,6 +58,36 @@ class ServicesClass{
       else return findUser;
   
      }
+
+     async frgtpassService(req) {
+        let response = {
+          success: true,
+          message: "",
+          data: "",
+        };
+        let email = { email: req.email };
+        let foundUser = await UserModelInstance.findUser(email);
+    
+        if (foundUser) {
+          
+          let token = jwt.sign(
+            { email: foundUser.email, id: foundUser.id },"keyvalue"
+            
+          );
+          let address = "http://127.0.0.1:3636/forgotpassword/";
+    
+          let link = address + token;
+    
+          console.log("Sending email to ", foundUser.data.email);
+    
+          let status =  nodemailer.sendMail(foundUser.data.email, link);
+          return status;
+        } else {
+          (response.success = false), (response.message = "User Not Found");
+          (response.data = ""), (response.status = 400);
+          return response;
+        }
+   }
 
 }
 //exports

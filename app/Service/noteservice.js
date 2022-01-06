@@ -39,13 +39,30 @@ class NoteServiceClass {
 
   }
    async isArchiveService(req){
-     let isArchive = {
+     var isArchive = {
        userid:req.data.id,
        isArchieved:true,
      }
      var noteisArchieved= await noteModelInstant.findNotes(isArchive)
      return noteisArchieved;
     
+   }
+   async isDeletedService(req){
+      var isDeleted = {
+        userid:req.data.id,
+        isDeleted:true
+        
+      }
+      var noteisDeleted= await noteModelInstant.findNotes(isDeleted)
+      return noteisDeleted
+   }
+   async updateNoteService(req,res){
+     let foundNote = await noteModelInstant.checkNotes(req,res)
+     if(foundNote.data){
+       let data = await noteModelInstant.updateNoteModel(req,foundNote)
+       return data;
+     }
+     else return foundNote;
    }
 }
 //exports

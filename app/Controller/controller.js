@@ -25,7 +25,17 @@ class RegistrationClass{
             res.send(JSON.stringify(err))
        })
      }
-
+     frgtpssControl(req,res){
+          service.frgtpassService(req.body)
+          .then((result)=>{
+               console.log(result)
+               res.send(JSON.stringify(result))
+          })
+          .catch((err)=>{
+               console.log(err)
+               res.send(JSON.stringify(err))
+          })
+        }
     
 }
 //export the registrationclass

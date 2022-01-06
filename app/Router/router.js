@@ -9,10 +9,13 @@ const router = express.Router();
 //register path
 router.post('/register', validator.registerValidate, controller.Registration);//validator.validate,
 //login
-router.post('/login', validator.loginValidate,   controller.loginControll)
+router.post('/login', validator.loginValidate,controller.loginControll)
+router.post('/forgotpassword',aut,controller.frgtpssControl)
 router.post('/createnotes',aut, noteControll.createNote)
 router.get('/getNotes',aut, noteControll.getNote)
+//router.post('/updateNotes',aut,noteControll.upadteNotes)
 router.delete('/deletenotes',aut,noteControll.deleteNotes)
 router.get('/isArchieved',aut,noteControll.isArchiveControll)
+router.get('/isDeleted',aut,noteControll.isDeletedControll)
 //exports
 module.exports = router

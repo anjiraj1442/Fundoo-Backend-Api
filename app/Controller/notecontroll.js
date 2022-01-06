@@ -37,6 +37,22 @@ class NotesControllerClass {
             res.status(400).send(err)
         }))
     }
+    async isDeletedControll(req,res){
+        await noteservice.isDeletedService(req.body)
+        .then((result)=>{
+            res.status(200).json(result)
+        }).catch((err=>{
+            res.status(400).send(err)
+        }))
+    }
+    async upadteNotes(req,res){
+        await noteservice.updateNoteService(req.body)
+        .then((result)=>{
+            res.status(200).json(result)
+        }).catch((err=>{
+            return res.status(400).send(err)
+        }))
+    }
 }
 //exports
 module.exports = new NotesControllerClass();
