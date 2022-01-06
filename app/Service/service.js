@@ -2,6 +2,8 @@
 const model = require("../Model/model")
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken")
+//const nodemailer = require('nodemailer')
+require('dotenv').config
 const nodemailer = require('../Validators/nodemailer')
 //const { reject } = require("bcrypt/promises");
 const UserModelInstance = new model.UserModelClass();
@@ -9,7 +11,7 @@ const newmodel = model.User;
 require('dotenv').config();
 //serviceclass
 class ServicesClass{
-   async  UserRegistration(obj,res){
+    async  UserRegistration(obj,res){
           let foundUser = await UserModelInstance.findUser(obj);
           if (!foundUser.data){
                const passwordHash = await bcrypt.hash(obj.password, 10)
@@ -78,7 +80,7 @@ class ServicesClass{
     
           let link = address + token;
     
-          console.log("Sending email to ", foundUser.data.email);
+          console.log("Sending email to ", foundUser.email);
     
           let status =  nodemailer.sendMail(foundUser.data.email, link);
           return status;
@@ -87,7 +89,19 @@ class ServicesClass{
           (response.data = ""), (response.status = 400);
           return response;
         }
-   }
+    }
+     async rstpassService(req, res) {
+       let foundUser = await UserModelInstance.findUser({ userId: req.id });
+         if (foundUser.data) {
+          const passwordHash = await bcrypt.hash(req.password, 10)
+          var updatedData = newmodel.updateOne({ userId: req.id }, { password: passwordHash });
+          return updatedData;
+        }
+       else return foundUser;
+     }
+
+
+
 
 }
 //exports

@@ -10,7 +10,7 @@ class NoteServiceClass {
             isArchieved: req.isArchieved,
             isDeleted: req.isDeleted,
             color: req.color,
-            userid: req.data.id,
+            //userid: req.data.id,
             
          })
          let saveData = noteModelInstant.createNoteModel(newUser);

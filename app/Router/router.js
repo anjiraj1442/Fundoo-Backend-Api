@@ -11,6 +11,7 @@ router.post('/register', validator.registerValidate, controller.Registration);//
 //login
 router.post('/login', validator.loginValidate,controller.loginControll)
 router.post('/forgotpassword',aut,controller.frgtpssControl)
+router.post('/resetpassword',aut,controller.rstpassControl)
 router.post('/createnotes',aut, noteControll.createNote)
 router.get('/getNotes',aut, noteControll.getNote)
 //router.post('/updateNotes',aut,noteControll.upadteNotes)

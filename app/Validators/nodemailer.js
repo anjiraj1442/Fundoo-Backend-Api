@@ -13,7 +13,7 @@ module.exports = {
          });
          var mailOptions = {
              from: 'thejatest19@gmail.com', // sender address
-             to: toMail, // list of receivers
+             to: "anjiraj8333@gmail.com", // list of receivers
              subject: "Reset password request", // Subject line
              text: "hi, this is link for reset password", // plaintext body
              html: `<div class="reset_password">

@@ -2,8 +2,8 @@
 const service = require('../Service/service');
 
 class RegistrationClass{
-     Registration(req,res){
-          service.UserRegistration(req.body)//body content
+    async Registration(req,res){
+         await service.UserRegistration(req.body)//body content
           .then((result)=>{
                console.log("succesfull", result);
 
@@ -14,8 +14,8 @@ class RegistrationClass{
           })
      }
 
-     loginControll(req,res){
-       service.loginServices(req.body)
+    async loginControll(req,res){
+        await service.loginServices(req.body)
        .then((result)=>{
             console.log(result)
             res.send(JSON.stringify(result))
@@ -25,8 +25,9 @@ class RegistrationClass{
             res.send(JSON.stringify(err))
        })
      }
-     frgtpssControl(req,res){
-          service.frgtpassService(req.body)
+
+     async frgtpssControl(req,res){
+          await service.frgtpassService(req.body)
           .then((result)=>{
                console.log(result)
                res.send(JSON.stringify(result))
@@ -35,7 +36,19 @@ class RegistrationClass{
                console.log(err)
                res.send(JSON.stringify(err))
           })
-        }
+     }
+
+     async rstpassControl(req,res){
+       await   service.rstpassService(req.body)
+          .then((result)=>{
+               console.log(result)
+               res.send(JSON.stringify(result))
+          })
+          .catch((err)=>{
+               console.log(err)
+               res.send(JSON.stringify(err))
+          })
+     }
     
 }
 //export the registrationclass
