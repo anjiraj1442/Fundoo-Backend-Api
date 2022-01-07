@@ -1,6 +1,7 @@
 //impot service
 const service = require('../Service/service');
 const logger = require('../Configdb/logger')
+const winston = require('winston')
 class RegistrationClass{
     async Registration(req,res){
          await service.UserRegistration(req.body)//body content
