@@ -3,7 +3,7 @@ const express = require("express");
 const logger = require('./app/Configdb/logger')
 const dotenv = require('dotenv');
 dotenv.config({path: '.env'})
-console.log(process.env.PORT);
+//console.log(process.env.PORT);
 const router = require("./app/Router/router")
 const expressValidator = require("express-validator")
 let dbconnection = require("./app/Configdb/config")
@@ -23,8 +23,10 @@ app.get("/",(req,res)=>{
 })
 const PORT = process.env.PORT 
 app.listen(PORT, ()=>{
-  logger.error('server start at 3636')
+  logger.silly('server start at 3636')
   console.log('server is listening');
 })
+
 //db connection
 dbconnection.connection();
+module.exports = app

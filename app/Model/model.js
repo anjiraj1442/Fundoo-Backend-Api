@@ -59,40 +59,7 @@ class UserModelClass{
        });
    });
  }
- //login
-   loginModel(req) {
-        var response = {
-            message: "",
-            data: "",
-            success: "",
-            status: 200
-        };
-        return new Promise((resolve, reject) => {
-            User.findOne({ password: req.password })
-                .then((data) => {
-                    if (data) {
-                        (response.success = true),
-                            (response.data = data),
-                            (response.status = 422),
-                            (response.message = "Login successful");
-                        resolve(response);
-                    }
-
-                    else {
-                        resolve({
-                            message: "user not found please register first",
-                            data: data,
-                            status: 400
-                        });
-                    }
-                })
-                .catch((err) => {
-                    reject(
-                        { success: false, error: err }
-                    );
-                });
-        });
-    }
+ 
     //register
    RegisterUser(req) {
    var response = {

@@ -1,5 +1,6 @@
 //imports
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
+const { error } = require("../Configdb/logger");
 require('dotenv').config();
 const logger = require('../Configdb/logger')
 class DBconnection{

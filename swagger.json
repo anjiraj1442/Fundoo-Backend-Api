@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Funddoo Backened",
+    "title": "Funddoo Backened App",
     "description": "This documentation guides the user through the APIs availabe in the system.",
     "version": "1.1.0"
   },
@@ -35,12 +35,18 @@
             }
           }
         ],
-        "description": "Register a user and get registered user `object` back from the server.",
+        "description": "Register new user",
         "produces": "application/json",
         "responses": {
           "200": {
-            "description": "OK"
-          }
+            "description": "New user is Registered"
+          },
+          "409":{
+            "description":"user already exist"
+          },
+          "500": {
+            "description": "Internal server error"
+        }
         }
       }
     },
@@ -68,7 +74,7 @@
             }
           }
         ],
-        "description": "Login a user and get registered user `object` back from the server.",
+        "description": "User that we want to login",
         "produces": "application/json",
         "responses": {
           "200": {
@@ -80,7 +86,7 @@
     "/forgetpassword": {
       "post": {
         "tags": [""],
-        "summary": "Reset a user.",
+        "summary": "Sent password resent link",
         "parameters": [
           {
             "in": "body",

@@ -28,20 +28,20 @@ class ServicesClass{
      }
 
     async loginServices(req,res){
-         let findUser = await UserModelInstance.findUser(req)
-         if (findUser.data) {
-              console.log(findUser, "find user");
-          let passwordVerify = await bcrypt.compare(req.password, findUser.data.password)
+         let userDetails = await UserModelInstance.findUser({email: req.email})
+         if (userDetails.data) {
+              console.log(userDetails, "find user");
+          let passwordVerify = await bcrypt.compare(req.password, userDetails.data.password)
           if (passwordVerify) {
-             const payload = { id:findUser.data._id, email:findUser.data.email}
+             const payload = { id:userDetails.data._id, email:userDetails.data.email}
               const token = jwt.sign(payload, process.env.SECRETTOKEN)
               return {
                   message: "Login success",
-                  userId: findUser.data._id,
-                  firstname: findUser.data.firstName,
-                  lastname: findUser.data.lastName,
-                  email: findUser.data.email,
-                  createdAt: findUser.data.createdAt,
+                  userId: userDetails.data._id,
+                  firstname: userDetails.data.firstName,
+                  lastname: userDetails.data.lastName,
+                  email: userDetails.data.email,
+                  createdAt: userDetails.data.createdAt,
                   success: "",
                   token: token,
                   status: 200
@@ -57,7 +57,7 @@ class ServicesClass{
 
           })
           }
-      else return findUser;
+      else return userDetails;
   
      }
 
@@ -73,16 +73,14 @@ class ServicesClass{
         if (foundUser) {
           
           let token = jwt.sign(
-            { email: foundUser.email, id: foundUser.id },"keyvalue"
+            { email: foundUser.email, id: foundUser.id },process.env.SECRETTOKEN,{expiresIn:"1d"}
             
           );
-          let address = "http://127.0.0.1:3636/forgotpassword/";
-    
-          let link = address + token;
+          
     
           console.log("Sending email to ", foundUser.email);
     
-          let status =  nodemailer.sendMail(foundUser.data.email, link);
+          let status =  nodemailer.sendMail(foundUser.data.email);
           return status;
         } else {
           (response.success = false), (response.message = "User Not Found");
@@ -93,11 +91,11 @@ class ServicesClass{
      async rstpassService(req, res) {
        let foundUser = await UserModelInstance.findUser({ _id: req.data.id });
          if (foundUser) {
-          let hash = await bcrypt.hash(req.password, 10)
+          let passwordHash = await bcrypt.hash(req.password, 10)
           var updatedData = newmodel.updateOne({ _id: req.data.id }, { password: passwordHash });
           return updatedData;
         }
-       else return foundUser;
+       else return updatedData;
      }
 
 
