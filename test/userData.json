@@ -1,31 +1,24 @@
 {
-    
-     "UserData1":{
-        "firstName": "anji",
-        "lastName": "raj",
-        "email": "anjiraj145@gmail.com",
-        "password": "12345678"
-     },
-     "UserData2":{
-      "firstName": "anji",
-      "lastName": "raj",
-      "email": "anjiraj145@gmail.com",
-      "password": "1234567"
-   },
+  "UserData1": {
+    "firstName": "anji",
+    "lastName": "raj",
+    "email": "anjiraj145@gmail.com",
+    "password": "12345678"
+  },
+  "UserData2": {
+    "firstName": "anji",
+    "lastName": "raj",
+    "email": "anjiraj145@gmail.com",
+    "password": "1234567"
+  },
 
+  "UserData3": {
+    "email": "anjiraj1442@gmail.com",
+    "password": "12345"
+  },
 
-
-
-   "UserData3":{
-      
-      "email": "anjiraj1442@gmail.com",
-      "password": "12345"
-   },
-
-   "UserData4":{
-      
-      "email": "anjiraj1442@gmail.com",
-      "password": "1234"
-   }
+  "UserData4": {
+    "email": "anjiraj1442@gmail.com",
+    "password": "1234"
+  }
 }
-   

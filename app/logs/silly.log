@@ -113,3 +113,115 @@
 {"level":"info","message":"login succes","timestamp":"2022-01-15T07:45:38.138Z"}
 {"level":"silly","message":"server start at 3636","timestamp":"2022-01-15T07:46:41.694Z"}
 {"code":"LOGIN_FAILED","level":"error","message":"error while login invalid password","name":"Error","statusCode":400,"timestamp":"2022-01-15T07:46:59.980Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-15T16:53:45.128Z"}
+{"code":"LOGIN_FAILED","level":"error","message":"error while login invalid password","name":"Error","statusCode":400,"timestamp":"2022-01-15T17:21:58.081Z"}
+{"code":"LOGIN_FAILED","level":"error","message":"error while login invalid password","name":"Error","statusCode":400,"timestamp":"2022-01-15T17:22:26.701Z"}
+{"code":"LOGIN_FAILED","level":"error","message":"error while login invalid password","name":"Error","statusCode":400,"timestamp":"2022-01-15T17:30:24.733Z"}
+{"code":"LOGIN_FAILED","level":"error","message":"error while login invalid password","name":"Error","statusCode":400,"timestamp":"2022-01-15T17:33:30.530Z"}
+{"code":"LOGIN_FAILED","level":"error","message":"error while login invalid password","name":"Error","statusCode":400,"timestamp":"2022-01-15T17:33:33.740Z"}
+{"code":"LOGIN_FAILED","level":"error","message":"error while login invalid password","name":"Error","statusCode":400,"timestamp":"2022-01-15T17:35:21.807Z"}
+{"code":"LOGIN_FAILED","level":"error","message":"error while login invalid password","name":"Error","statusCode":400,"timestamp":"2022-01-15T17:35:58.932Z"}
+{"code":"LOGIN_FAILED","level":"error","message":"error while login invalid password","name":"Error","statusCode":400,"timestamp":"2022-01-15T17:36:00.460Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-15T17:37:03.847Z"}
+{"level":"error","message":"error while login Cannot read properties of undefined (reading 'password')","stack":"TypeError: Cannot read properties of undefined (reading 'password')\n    at ServicesClass.loginServices (C:\\FunDooApp\\app\\Service\\service.js:35:18)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async loginControll (C:\\FunDooApp\\app\\Controller\\controller.js:22:9)","timestamp":"2022-01-15T17:37:12.205Z"}
+{"level":"error","message":"error while login Cannot read properties of undefined (reading 'password')","stack":"TypeError: Cannot read properties of undefined (reading 'password')\n    at ServicesClass.loginServices (C:\\FunDooApp\\app\\Service\\service.js:35:18)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async loginControll (C:\\FunDooApp\\app\\Controller\\controller.js:22:9)","timestamp":"2022-01-15T17:38:08.621Z"}
+{"level":"error","message":"error while login Cannot read properties of undefined (reading 'password')","stack":"TypeError: Cannot read properties of undefined (reading 'password')\n    at ServicesClass.loginServices (C:\\FunDooApp\\app\\Service\\service.js:35:18)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async loginControll (C:\\FunDooApp\\app\\Controller\\controller.js:22:9)","timestamp":"2022-01-15T17:38:10.187Z"}
+{"level":"error","message":"error while login Cannot read properties of undefined (reading 'password')","stack":"TypeError: Cannot read properties of undefined (reading 'password')\n    at ServicesClass.loginServices (C:\\FunDooApp\\app\\Service\\service.js:35:18)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async loginControll (C:\\FunDooApp\\app\\Controller\\controller.js:22:9)","timestamp":"2022-01-15T17:40:59.398Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-15T17:44:10.259Z"}
+{"level":"error","message":"error while login Cannot read properties of undefined (reading 'password')","stack":"TypeError: Cannot read properties of undefined (reading 'password')\n    at ServicesClass.loginServices (C:\\FunDooApp\\app\\Service\\service.js:35:18)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async loginControll (C:\\FunDooApp\\app\\Controller\\controller.js:22:9)","timestamp":"2022-01-15T17:44:14.516Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-15T17:49:07.653Z"}
+{"level":"info","message":"login succes","timestamp":"2022-01-15T17:49:12.446Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-15T17:50:15.960Z"}
+{"level":"info","message":"login succes","timestamp":"2022-01-15T17:50:16.793Z"}
+{"code":"LOGIN_FAILED","level":"error","message":"error while login invalid password","name":"Error","statusCode":400,"timestamp":"2022-01-15T17:50:16.992Z"}
+{"code":"LOGIN_FAILED","level":"error","message":"error while login invalid password","name":"Error","statusCode":400,"timestamp":"2022-01-15T18:12:45.095Z"}
+{"code":"LOGIN_FAILED","level":"error","message":"error while login invalid password","name":"Error","statusCode":400,"timestamp":"2022-01-15T18:12:52.725Z"}
+{"code":"LOGIN_FAILED","level":"error","message":"error while login invalid password","name":"Error","statusCode":400,"timestamp":"2022-01-15T18:12:59.262Z"}
+{"code":"LOGIN_FAILED","level":"error","message":"error while login invalid password","name":"Error","statusCode":400,"timestamp":"2022-01-15T18:13:04.880Z"}
+{"code":"LOGIN_FAILED","level":"error","message":"error while login invalid password","name":"Error","statusCode":400,"timestamp":"2022-01-15T18:13:09.692Z"}
+{"code":"LOGIN_FAILED","level":"error","message":"error while login invalid password","name":"Error","statusCode":400,"timestamp":"2022-01-15T18:13:18.897Z"}
+{"level":"info","message":"login succes","timestamp":"2022-01-15T18:14:05.559Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-16T07:20:46.852Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-25T05:49:11.742Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-25T05:52:05.315Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-25T05:53:22.637Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-25T05:53:30.131Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-25T06:06:10.506Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-25T06:29:53.808Z"}
+{"level":"info","message":"login succes","timestamp":"2022-01-25T06:31:18.269Z"}
+{"level":"info","message":"login succes","timestamp":"2022-01-25T06:32:10.042Z"}
+{"level":"info","message":"login succes","timestamp":"2022-01-25T06:34:29.464Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-25T08:15:03.762Z"}
+{"level":"info","message":"login succes","timestamp":"2022-01-25T08:17:15.224Z"}
+{"level":"info","message":"login succes","timestamp":"2022-01-25T08:18:07.003Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-25T08:20:24.101Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-25T08:20:28.086Z"}
+{"level":"info","message":"login succes","timestamp":"2022-01-25T08:58:38.739Z"}
+{"level":"info","message":"login succes","timestamp":"2022-01-25T09:27:13.365Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-25T18:59:50.209Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-26T07:17:35.073Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-26T07:29:46.857Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-26T15:29:47.959Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-26T19:02:35.392Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T14:01:06.224Z"}
+{"level":"info","message":"login succes","timestamp":"2022-01-27T14:02:01.155Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T14:05:29.002Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T14:11:17.366Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T14:12:47.424Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T14:14:36.260Z"}
+{"level":"error","message":"error in forgot password operation","timestamp":"2022-01-27T14:14:42.010Z"}
+{"level":"info","message":"login succes","timestamp":"2022-01-27T14:21:25.618Z"}
+{"level":"error","message":"error in forgot password operation","timestamp":"2022-01-27T14:22:03.346Z"}
+{"code":"LOGIN_FAILED","level":"error","message":"error while login invalid password","name":"Error","statusCode":400,"timestamp":"2022-01-27T14:27:15.312Z"}
+{"level":"info","message":"login succes","timestamp":"2022-01-27T14:27:22.690Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T14:35:16.158Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T14:35:55.486Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T14:36:02.455Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T14:36:42.827Z"}
+{"level":"error","message":"error in forgot password operation","timestamp":"2022-01-27T14:36:43.635Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T14:37:11.708Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T14:39:47.565Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T14:40:31.664Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T14:40:40.477Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T14:40:48.242Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T14:40:54.132Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T14:41:10.797Z"}
+{"level":"error","message":"error in forgot password operation","timestamp":"2022-01-27T14:41:13.132Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T14:42:27.352Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T14:42:38.443Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T14:42:50.364Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T14:43:05.073Z"}
+{"level":"error","message":"error in forgot password operation","timestamp":"2022-01-27T14:43:09.212Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T14:43:25.790Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T14:43:30.958Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T14:43:45.254Z"}
+{"level":"error","message":"error in forgot password operation","timestamp":"2022-01-27T14:43:50.599Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T14:46:12.091Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T14:46:50.411Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T14:49:48.258Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T14:52:04.662Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T14:52:10.298Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T14:53:01.565Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T14:53:05.922Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T14:53:55.832Z"}
+{"code":"LOGIN_FAILED","level":"error","message":"error while login invalid password","name":"Error","statusCode":400,"timestamp":"2022-01-27T14:56:58.398Z"}
+{"code":"LOGIN_FAILED","level":"error","message":"error while login invalid password","name":"Error","statusCode":400,"timestamp":"2022-01-27T14:57:36.064Z"}
+{"code":"LOGIN_FAILED","level":"error","message":"error while login invalid password","name":"Error","statusCode":400,"timestamp":"2022-01-27T14:58:40.864Z"}
+{"level":"info","message":"login succes","timestamp":"2022-01-27T15:00:54.146Z"}
+{"level":"info","message":"login succes","timestamp":"2022-01-27T15:02:07.483Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T15:09:59.524Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T15:11:26.828Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T15:11:41.443Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T15:11:47.831Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T15:11:55.470Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T15:12:10.955Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T15:12:15.858Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T15:12:20.534Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T15:12:28.414Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T15:12:33.610Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T15:12:39.587Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T15:12:45.108Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T15:12:50.615Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T15:13:07.376Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T15:13:12.798Z"}
+{"level":"silly","message":"server start at 3636","timestamp":"2022-01-27T15:13:34.825Z"}
